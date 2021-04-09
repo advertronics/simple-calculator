@@ -56,7 +56,9 @@ equals.addEventListener("click", () => {
     //userInputs.push(equals.textContent)
     input.value = input.value + equals.textContent
     console.log(userInputs)
-    expressionEvaluation(userInputs)
+    while(userInputs.length > 1){
+        expressionEvaluation(userInputs)
+    }
     equalsClicked = true   // sometimes user want to do more calculations even after pressing (=) we record this and enable him to continue 
     input.value = input.value + userInputs[0]    
 })
