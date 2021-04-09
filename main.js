@@ -8,8 +8,6 @@ const operators = document.querySelectorAll(".operator")
 const equals = document.querySelector("#equals")
 const clearBtn = document.querySelector("#clear")
 
-
-
 /*----Event Listeners----*/
 
   // disable inputs from keyboard
@@ -112,9 +110,7 @@ function expressionEvaluation(arr){
         }
 
     }
-
-    console.log(arr)
-
+    console.log(arr)   
 }
 
 
