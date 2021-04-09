@@ -39,6 +39,7 @@ for(let operator of operators){
             userInputs.push(valueOne)                       
         } else{
             input.value = userInputs[0]
+            equalsClicked = false
         }        
         userInputs.push(operator.textContent)
         input.value = input.value + operator.textContent
