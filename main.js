@@ -87,10 +87,9 @@ function calculateRealValue(str){
 
 // we need to work out the solution to the expression in the input field..taking into mind precedence of operators
 function expressionEvaluation(arr){
-    higherPrecedence()
+    higherPrecedence(arr)
     console.log(arr)
-
-    if(arr.indexOf(" / ") == -1 && arr.indexOf(" x ") == -1){ // ensure there are no more higher precedence operators left
+    if(arr.indexOf(" / ") == -1 && arr.indexOf(" x ") == -1){ // ensure there are no more higher precedence operators left before proceeding to lower precedence operators
         for(i=0; i < arr.length; i++){
             let results = 0
             if(arr[i] == " + "){
@@ -100,10 +99,11 @@ function expressionEvaluation(arr){
             if(arr[i] == " - "){
                 results = arr[i-1] - arr[i+1]
                 arr.splice(i-1, 3, results)  
-            }    
+            }
+    
         }
         console.log(arr)
-    } else{
+    } else {  // if there more higher precedence operator, call the higherPrecedence() function again
         higherPrecedence(arr)
     }      
 }
