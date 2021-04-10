@@ -87,18 +87,25 @@ function calculateRealValue(str){
 
 // we need to work out the solution to the expression in the input field..taking into mind precedence of operators
 function expressionEvaluation(arr){
-    for(i=0; i < arr.length; i++){
-        let results = 0
-        if(arr[i] == " / " || arr[i] == " x "){
-            if(arr[i] == " / "){
-                results = arr[i-1] / arr[i+1]
-                arr.splice(i-1, 3, results)                
-            }
-            if(arr[i] == " x "){
-                results = arr[i - 1] * arr[i + 1]
-                arr.splice(i-1, 3, results)  
+    higherPrecedence()
+    function higherPrecedence(){
+        for(i=0; i < arr.length; i++){
+            let results = 0
+            if(arr[i] == " / " || arr[i] == " x "){
+                if(arr[i] == " / "){
+                    results = arr[i-1] / arr[i+1]
+                    arr.splice(i-1, 3, results)                
+                }
+                if(arr[i] == " x "){
+                    results = arr[i - 1] * arr[i + 1]
+                    arr.splice(i-1, 3, results)  
+                }
             }
         }
+    }
+
+    if(userInputs.indexOf(" / ") != -1 || userInputs.indexOf(" x ")){
+        higherPrecedence()
     }
     console.log(arr)
     for(i=0; i < arr.length; i++){
