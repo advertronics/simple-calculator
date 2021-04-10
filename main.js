@@ -23,6 +23,11 @@ clearBtn.addEventListener("click", () => {
   // listening to selections from the number buttons (including 0 and decimal point)
 for(let operandBtn of operands){
     operandBtn.addEventListener("click", () => {
+        if(equalsClicked){
+            userInputs = []
+            input.value = ""
+            equalsClicked = false
+        }
         const operandValue = operandBtn.textContent
         input.value = input.value + operandValue.trim()
         const inputArr = input.value.split(" ")    
