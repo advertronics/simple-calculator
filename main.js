@@ -110,7 +110,6 @@ function expressionEvaluation(arr){
 function higherPrecedence(arr){
     for(i=0; i < arr.length; i++){
         let results = 0
-        if(arr[i] == " / " || arr[i] == " x "){
             if(arr[i] == " / "){
                 results = arr[i-1] / arr[i+1]
                 arr.splice(i-1, 3, results)                
@@ -118,8 +117,7 @@ function higherPrecedence(arr){
             if(arr[i] == " x "){
                 results = arr[i - 1] * arr[i + 1]
                 arr.splice(i-1, 3, results)  
-            }
-        }
+            }        
     }
 }
 
