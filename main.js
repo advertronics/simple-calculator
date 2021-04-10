@@ -103,8 +103,9 @@ function expressionEvaluation(arr){
             }    
         }
         console.log(arr)
-    }
-      
+    } else{
+        higherPrecedence(arr)
+    }      
 }
 function higherPrecedence(arr){
     for(i=0; i < arr.length; i++){
