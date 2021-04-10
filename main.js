@@ -90,7 +90,7 @@ function expressionEvaluation(arr){
     higherPrecedence()
     console.log(arr)
 
-    if(arr.indexOf(" / ") == -1 || arr.indexOf(" x ") == -1){ // ensure there are no more higher precedence operators left
+    if(arr.indexOf(" / ") == -1 && arr.indexOf(" x ") == -1){ // ensure there are no more higher precedence operators left
         for(i=0; i < arr.length; i++){
             let results = 0
             if(arr[i] == " + "){
