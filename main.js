@@ -23,6 +23,7 @@ clearBtn.addEventListener("click", () => {
   // listening to selections from the number buttons (including 0 and decimal point)
 for(let operandBtn of operands){
     operandBtn.addEventListener("click", () => {
+       // to ensure you can start another operation without clicking the AC button
         if(equalsClicked){
             userInputs = []
             input.value = ""
