@@ -104,7 +104,7 @@ function expressionEvaluation(arr){
         }
     }
 
-    if(userInputs.indexOf(" / ") != -1 || userInputs.indexOf(" x ")){
+    if(userInputs.indexOf(" / ") != -1 || userInputs.indexOf(" x ") != -1){ // ensure there are no more higher precedence operators left
         higherPrecedence()
     }
     console.log(arr)
